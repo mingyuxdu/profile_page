@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>赵明宇 | 科研与技术博客</title>
+    <meta
+      name="description"
+      content="赵明宇的个人科研主页和技术博客，记录电子设计、AI 工具、科研开发与技术文章。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 顶部导航：后续新增页面时，在这里继续添加链接即可。 -->
+    <header class="site-header">
+      <a class="site-title" href="index.html">赵明宇</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="about.html">个人简介</a>
+        <a href="electronics.html">电子设计博客</a>
+        <a href="photography.html">摄影</a>
+      </nav>
+    </header>
+
+    <!-- 首页主体：左侧是个人信息，右侧是文章列表。 -->
+    <main class="page home-layout">
+      <aside class="home-sidebar">
+        <div class="portrait" aria-label="个人照片占位">
+          <span>Photo</span>
+        </div>
+
+        <section class="profile-card">
+          <p class="eyebrow">&nbsp;</p>
+          <h1>赵明宇</h1>
+          <p>
+            关注电子系统设计、AI 辅助研发、嵌入式工程、实验原型验证与技术写作。
+          </p>
+        </section>
+
+        <section class="contact-card" aria-label="联系方式">
+          <h2>联系方式</h2>
+          <p><a href="mailto:myzhao0629@163.com">myzhao0629@163.com</a></p>
+        </section>
+      </aside>
+
+      <section class="home-main">
+        <div class="section-header">
+          <p class="eyebrow">Technical Notes</p>
+          <h2>文章与博客</h2>
+          <p>
+            这里是长期文章索引。电子设计相关内容也会同步归档到电子设计博客页面。
+          </p>
+        </div>
+
+        <!--
+          文章列表：
+          1. 每篇文章使用一个 article.article-item。
+          2. 三段结构固定为：题目、描述、技术栈。
+          3. 以后新增文章时，复制一个 article 块并修改链接、标题、描述和 Tech Stack。
+        -->
+        <div class="article-stack">
+          <article class="article-item">
+            <h3><a href="posts/ai-research-workflow.html">用 AI 辅助科研与工程开发的个人工作流</a></h3>
+            <p>
+              记录如何把 AI 工具用于文献整理、方案推演、代码生成、实验记录和技术写作。
+            </p>
+            <div class="tech-stack">Tech Stack: LLM, Research Workflow, Prompt Engineering</div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="posts/embedded-lab-notes.html">嵌入式系统实验记录：从需求到可测原型</a></h3>
+            <p>
+              以工程笔记形式整理传感器选型、接口验证、调试记录和风险列表。
+            </p>
+            <div class="tech-stack">Tech Stack: Embedded C, MCU, Sensor Interface, UART/I2C/SPI</div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="posts/pcb-prototype-checklist.html">小批量 PCB 原型检查清单</a></h3>
+            <p>
+              面向个人研发和实验室项目的 PCB 下单前检查项，包括电源、接口、封装和可测试性。
+            </p>
+            <div class="tech-stack">Tech Stack: PCB Design, KiCad/Altium, DFM, Hardware Testing</div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="#">低成本传感器数据采集系统设计笔记</a></h3>
+            <p>
+              占位文章：整理一个小型数据采集系统从需求定义、采样频率到数据记录格式的设计过程。
+            </p>
+            <div class="tech-stack">Tech Stack: Sensor, ADC, Python, Data Logging</div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="#">面向实验室原型的电源完整性检查方法</a></h3>
+            <p>
+              占位文章：记录电源入口、稳压链路、去耦电容和负载瞬态测试中的常见检查项。
+            </p>
+            <div class="tech-stack">Tech Stack: Power Integrity, Oscilloscope, LDO/DC-DC</div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="#">AI 辅助阅读论文时如何保留自己的判断</a></h3>
+            <p>
+              占位文章：讨论如何让 AI 帮助整理文献结构，同时避免把模型输出误当成研究结论。
+            </p>
+            <div class="tech-stack">Tech Stack: LLM, Literature Review, Note-taking</div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="#">个人科研主页的静态网站维护流程</a></h3>
+            <p>
+              占位文章：记录如何用 HTML、CSS 和少量 JavaScript 维护长期更新的个人技术主页。
+            </p>
+            <div class="tech-stack">Tech Stack: HTML, CSS, JavaScript, Static Site</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 赵明宇. 个人科研主页与技术博客。</p>
+    </footer>
+  </body>
+</html>

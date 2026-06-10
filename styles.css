@@ -1,0 +1,405 @@
+:root {
+  /* 全站颜色变量：以后想换主题色，优先改这里。 */
+  color-scheme: dark;
+  --bg: #06080d;
+  --text: #e8edf5;
+  --muted: #9aa7b8;
+  --line: #263347;
+  --soft-line: #182234;
+  --panel: #0d1320;
+  --panel-strong: #111a2b;
+  --accent: #77b7ff;
+  --accent-soft: #172b46;
+  --gold: #d6b46d;
+  --max-width: 1040px;
+}
+
+/* 让宽度计算更直观：元素宽度包含 padding 和 border。 */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(16, 27, 46, 0.88), rgba(6, 8, 13, 0.96) 360px),
+    var(--bg);
+  background-repeat: no-repeat;
+  color: var(--text);
+  font-family:
+    "Inter", "Noto Serif SC", "Source Han Serif SC", "Songti SC", "Microsoft YaHei UI",
+    "PingFang SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* 基础链接样式。 */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 顶部导航区域。 */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-title {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.site-title:hover {
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+/* 首页两栏布局：左侧个人信息，右侧文章列表。 */
+.home-layout {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 720px);
+  gap: 42px;
+  justify-content: end;
+  align-items: start;
+}
+
+/* 左栏保持轻量，不做整块卡片。 */
+.home-sidebar {
+  display: grid;
+  gap: 15px;
+  align-content: start;
+}
+
+.home-main {
+  max-width: none;
+  margin-left: 0;
+  border-left: 1px solid rgba(119, 183, 255, 0.18);
+  padding-left: 28px;
+}
+
+.profile-summary {
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--line);
+}
+
+.portrait {
+  display: grid;
+  width: 156px;
+  aspect-ratio: 3 / 4;
+  place-items: center;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(160deg, #18243a, #0d1320);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* 这些卡片样式主要用于子页面；首页左栏会在下面单独取消边框。 */
+.contact-card,
+.profile-card,
+.side-panel {
+  border: 1px solid var(--line);
+  background: rgba(13, 19, 32, 0.82);
+  padding: 18px;
+}
+
+/* 首页左栏不使用明显卡片，避免左侧过于突出。 */
+.home-sidebar .contact-card,
+.home-sidebar .profile-card {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.contact-card h2 {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-card p,
+.profile-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.contact-card a {
+  overflow-wrap: anywhere;
+}
+
+.profile-card h1 {
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 13px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 23px;
+  font-weight: 650;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.lead {
+  max-width: 760px;
+  margin: 18px 0 22px;
+  color: #cad3df;
+  font-size: 18px;
+}
+
+.info-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.info-list div {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.info-list dt {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.info-list dd {
+  margin: 0;
+}
+
+.content-section {
+  padding-top: 38px;
+}
+
+.section-header {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* 文章列表适合长期增长：每篇文章是一个独立 article。 */
+.article-stack {
+  border-top: 1px solid var(--line);
+}
+
+.article-item {
+  display: grid;
+  gap: 7px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--soft-line);
+}
+
+.article-item p {
+  max-width: 670px;
+  margin: 0;
+  color: #cad3df;
+}
+
+.category,
+.tech-stack {
+  display: inline-block;
+  color: var(--muted);
+  font-family: Consolas, "SFMono-Regular", monospace;
+  font-size: 13px;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 44px;
+}
+
+.side-panel {
+  align-self: start;
+}
+
+.side-panel h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.side-panel ul,
+.plain-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.side-panel li,
+.plain-list li {
+  margin: 6px 0;
+}
+
+.profile-section,
+.article-content section {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--soft-line);
+}
+
+.profile-section p,
+.profile-section li,
+.article-content p,
+.article-content li {
+  color: #cad3df;
+}
+
+.profile-section h2,
+.article-content h2 {
+  margin-bottom: 12px;
+}
+
+.record-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.record-list li {
+  padding-left: 18px;
+  border-left: 3px solid var(--accent-soft);
+}
+
+.article-header {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-meta {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.article-content {
+  max-width: 780px;
+}
+
+.photo-entry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.photo-box {
+  min-height: 180px;
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+  padding: 14px;
+  color: var(--muted);
+}
+
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 24px 32px;
+  border-top: 1px solid rgba(119, 183, 255, 0.08);
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* 手机和平板窄屏时，两栏自动改为单栏。 */
+@media (max-width: 760px) {
+  .site-header,
+  .profile-summary,
+  .home-layout,
+  .two-column,
+  .photo-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .portrait {
+    width: min(156px, 100%);
+  }
+
+  .home-sidebar {
+    position: static;
+  }
+
+  .home-main {
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .info-list div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
