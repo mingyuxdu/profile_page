@@ -130,6 +130,13 @@ a:hover {
   font-size: 14px;
 }
 
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* 这些卡片样式主要用于子页面；首页左栏会在下面单独取消边框。 */
 .contact-card,
 .profile-card,
